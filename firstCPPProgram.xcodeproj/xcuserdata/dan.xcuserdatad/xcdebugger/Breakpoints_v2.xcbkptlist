@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "firstCPPProgram/main.cpp"
-            timestampString = "497597350.887556"
+            timestampString = "497648255.495125"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "main()"
             landmarkType = "9">
          </BreakpointContent>
@@ -26,27 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "firstCPPProgram/main.cpp"
-            timestampString = "497597350.887556"
+            timestampString = "497640689.736783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "main()"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "firstCPPProgram/main.cpp"
-            timestampString = "497592692.05255"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "isOperator(char x)"
             landmarkType = "9">
          </BreakpointContent>
@@ -58,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "firstCPPProgram/main.cpp"
-            timestampString = "497597350.887556"
+            timestampString = "497650918.108308"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "main()"
             landmarkType = "9">
          </BreakpointContent>
@@ -74,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "firstCPPProgram/main.cpp"
-            timestampString = "497597350.887556"
+            timestampString = "497650214.696233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "main()"
             landmarkType = "9">
          </BreakpointContent>
