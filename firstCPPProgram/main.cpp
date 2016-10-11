@@ -29,24 +29,28 @@ bool isOperator(char x)
     }
 }
 
-map<int,int> updateNumbersAndTheirLocations(map<int,int> oldNumbersAndTheirLocations)
+map<int,string> updateNumbersAndTheirLocations(vector<char> workingAlgo)
 {
-    map<int,int> workingMap;
+    map<int,string> workingNumsandLocations;
     
-    for(int i=0; i<oldNumbersAndTheirLocations.size(); i++)
+    for(int i=0; i<workingAlgo.size(); i++)
     {
-        if(isdigit(oldNumbersAndTheirLocations[i]) != 0)
+        string thisNum = "";
+        while(isdigit(workingAlgo[i]) != 0)
         {
-            workingMap[i] = oldNumbersAndTheirLocations.at(i);
+            thisNum.push_back(workingAlgo[i]);
+            i++;
         }
-
+        if (thisNum != ""){
+            workingNumsandLocations[i] = thisNum;
+        }
     }
     
-    for(auto elem : oldNumbersAndTheirLocations)
+    for(auto elem : workingNumsandLocations)
     {
         cout << "elem: " << elem.first << " " << elem.second << "\n";
     }
-    return oldNumbersAndTheirLocations;
+    return workingNumsandLocations;
 }
 
 int main()
@@ -55,13 +59,26 @@ int main()
     string userInput = "";
     getline(cin, userInput);
     vector<char> workingAlgo;
-    map<int,int> numbersAndTheirLocations;
+    map<int,string> numbersAndTheirLocations;
     for(int i=0; i<userInput.length(); i++)
     {
-        if(isdigit(userInput[i]) != 0)
+        string thisNum = "";
+        int tensPlaceLocation = i;
+        while(isdigit(userInput[i]) != 0)
         {
-            numbersAndTheirLocations[i] = atoi(&userInput.at(i));
+            workingAlgo.push_back(userInput[i]);
+            thisNum.push_back(userInput[i]);
+            i++;
         }
+        if (thisNum != ""){
+            numbersAndTheirLocations[tensPlaceLocation] = thisNum;
+        }
+        else {
+            workingAlgo.push_back(userInput[i]);
+        }
+    }
+    
+    for(int i=0; i<userInput.length(); i++){
         workingAlgo.push_back(userInput[i]);
     }
     
@@ -71,10 +88,12 @@ int main()
         {
             if (workingAlgo[i] == '*')
             {
-                cout << "num1: " << numbersAndTheirLocations.find(i-1)->second << "\n";
-                cout << "num2: " << numbersAndTheirLocations.find(i+1)->second << "\n";
-                int num1 = numbersAndTheirLocations.find(i-1)->second;
-                int num2 = numbersAndTheirLocations.find(i+1)->second;
+                cout << "num1: " << numbersAndTheirLocations[i-1] << "\n";
+                cout << "num2: " << numbersAndTheirLocations[i+1] << "\n";
+//                cout << "num1: " << numbersAndTheirLocations.find(i-1)->second << "\n";
+//                cout << "num2: " << numbersAndTheirLocations.find(i+1)->second << "\n";
+                int num1 = stoi(numbersAndTheirLocations.find(i-1)->second);
+                int num2 = stoi(numbersAndTheirLocations.find(i+1)->second);
                 int product = num1 * num2;
                 cout << "prod: " << product << "\n";
                 
@@ -84,14 +103,14 @@ int main()
                     workingAlgo.at(i+1) = product;
                     cout << "product elem: " << workingAlgo.at(i+1) << "\n";
                     workingAlgo.erase(workingAlgo.begin()+(i-1), workingAlgo.begin()+(i+1));
-                    updateNumbersAndTheirLocations(numbersAndTheirLocations);
+                    updateNumbersAndTheirLocations(workingAlgo);
                 }
                 else
                 {
                     workingAlgo.push_back('-');
                     workingAlgo.push_back(product);
                     workingAlgo.erase(workingAlgo.begin()+(i-1), workingAlgo.begin()+(i+2));
-                    updateNumbersAndTheirLocations(numbersAndTheirLocations);
+                    updateNumbersAndTheirLocations(workingAlgo);
                 }
             }
         }
